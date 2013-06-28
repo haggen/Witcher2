@@ -1,13 +1,7 @@
-*.w2strings
-*.w2scripts
-*.w2strings
-*.w2speech
-*.cache
-*.dzip
-*.fev
-*.fsb
-*.usm
-*.otf
-*.swf
-*.zip
-*.bmp
+# Sources
+!*.ws
+!*.xml
+!*.csv
+
+# Ignore everything else
+*
