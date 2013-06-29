@@ -194,8 +194,6 @@ import class CWitcherGame extends CGame
 	// Game started (world is already loaded)
 	event OnGameStarted()
 	{
-		var i : int;
-
 		theHud.OnGameStarted();
 		theGame.ResetTutorialData();
 		if( thePlayer.GetCurrentMapId() == 1234 )
@@ -205,14 +203,6 @@ import class CWitcherGame extends CGame
 		else
 		{
 			theHud.MapLoad( thePlayer.GetCurrentMapId() );
-		}
-
-		// Start off with traning tree completed
-		// Added by Arthur, 6/26/2013 10:30PM -0300
-		for( i=1; i <= 6; i+=1 )
-		{
-			thePlayer.GetCharacterStats().AddAbility( StringToName( "training_s" + i ) );
-			thePlayer.GetCharacterStats().AddAbility( StringToName( "training_s" + i + "_2" ) );
 		}
 	}
 	
