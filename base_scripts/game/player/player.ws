@@ -3447,7 +3447,7 @@ import class CPlayer extends CActor
 	
 	function KeepCombatMode()
 	{
-		combatMode = 7;
+		combatMode = 2;
 		theGame.CreateNoSaveLock( 'PlayerInCombat', combatModeSaveLock );
 		
 		if ( thePlayer.AreCombatHotKeysBlocked() ) thePlayer.SetCombatHotKeysBlocked( false );
@@ -4019,7 +4019,22 @@ mBoolean( true ) );
 	function SetBasicAbility()
 	{
 		GetCharacterStats().AddAbility('Witcher Default');
-	}
+
+		// Added by <hagg3n@gmail.com> on 2013-06-29T17:55:45.317000-0300
+		// Geralt starts with all training skills
+		GetCharacterStats().AddAbility('training_s1');
+		GetCharacterStats().AddAbility('training_s1_2');
+		GetCharacterStats().AddAbility('training_s2');
+		GetCharacterStats().AddAbility('training_s2_2');
+		GetCharacterStats().AddAbility('training_s3');
+		GetCharacterStats().AddAbility('training_s3_2');
+		GetCharacterStats().AddAbility('training_s4');
+		GetCharacterStats().AddAbility('training_s4_2');
+		GetCharacterStats().AddAbility('training_s5');
+		GetCharacterStats().AddAbility('training_s5_2');
+		GetCharacterStats().AddAbility('training_s6');
+		GetCharacterStats().AddAbility('training_s6_2');
+		}
 	
 	// EXPERIENCE AND TALENT POINTS
 	function ResetLevel()
@@ -4203,7 +4218,7 @@ mBoolean( true ) );
 			
 			m_canUseMedallion = false;
 			theHud.m_hud.SetIsMedallionActive( false );
-			AddTimer( 'OnEnableMedallion', 10.f, false );
+			AddTimer( 'OnEnableMedallion', 1.5f, false );
 			
 			FindPowerPlaces();
 			
